@@ -1,0 +1,27 @@
+name: Test OpenShift ARC
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: arc-runner-set
+
+    steps:
+      - name: System information
+        run: |
+          echo "Hello from OpenShift ARC"
+          uname -a
+          cat /etc/os-release
+
+      - name: CPU
+        run: |
+          nproc
+
+      - name: Memory
+        run: |
+          free -h
+
+      - name: Network
+        run: |
+          curl -I https://github.com
