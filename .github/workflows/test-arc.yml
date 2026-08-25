@@ -8,20 +8,10 @@ jobs:
     runs-on: arc-runner-set
 
     steps:
-      - name: System information
+      - name: Runner identity
+        shell: bash
         run: |
           echo "Hello from OpenShift ARC"
+          hostname
           uname -a
           cat /etc/os-release
-
-      - name: CPU
-        run: |
-          nproc
-
-      - name: Memory
-        run: |
-          free -h
-
-      - name: Network
-        run: |
-          curl -I https://github.com
